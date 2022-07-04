@@ -4,8 +4,9 @@ import foods from "../views/foods";
 import hotels from "../views/hotels";
 
 const routes = [
+   
   {
-    path: "/locations",
+    path: "/",
     name: "locations",
     component: locations,
   },
