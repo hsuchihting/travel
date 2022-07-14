@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import Location from "../views/Location.vue";
 import Hotel from "../views/Hotel.vue";
 import Food from "../views/Food.vue";
-import Search from "../views/Search.vue";
 import SearchResult from "../views/SearchResult.vue";
 
 const routes = [
@@ -20,11 +19,6 @@ const routes = [
     path: "/food",
     name: "Food",
     component: Food,
-  },
-  {
-    path: "/search",
-    name: "Search",
-    component: Search,
   },
   {
     path: "/search-result",
