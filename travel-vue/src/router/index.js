@@ -6,7 +6,7 @@ import SearchResult from "../views/SearchResult.vue";
 
 const routes = [
   {
-    path: "/location",
+    path: "/",
     name: "Location",
     component: Location,
   },
