@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // mode: "jit",
   content: ["./public/index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -17,7 +16,7 @@ module.exports = {
         search: "#A8B67E26",
       },
       fontFamily: {
-        "Source Han Serif TC": "Source Han Serif TC",
+        "SourceHanSerifTC": "Source Han Serif TC",
       },
     },
   },
