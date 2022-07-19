@@ -3,35 +3,29 @@
   <div class="container mx-auto">
     <logo-info></logo-info>
 
-    <div class="w-[714px] mt-20">
-      <ul class="flex justify-center items-center">
-        <li
-          v-for="item in tabList"
-          :key="item.name"
-          class="px-10 py-10 text-center border-b-2 border-white active:border-b-primary cursor-pointer"
-          :class="{ active: item.status }"
-          @click="tabChecked(item.name, item.path)"
+    <ul class="mt-20 flex justify-center items-center tabBlock">
+      <li
+        v-for="item in tabList"
+        :key="item.name"
+        class="px-5 py-5 text-center border-b-2 border-primaryDark cursor-pointer tab"
+        :class="{ active: item.status }"
+        @click="tabChecked(item.name, item.path)"
+      >
+        <img class="w-20 h-20" :src="item.img" :alt="item.name" />
+        <p
+          class="text-primaryDark text-lg text-center pt-3 font-SourceHanSerifTC"
         >
-          <img class="w-20 h-20" :src="item.img" :alt="item.name" />
-          <p
-            class="text-primaryDark text-lg text-center pt-3 font-SourceHanSerifTC"
-          >
-            {{ item.title }}
-            <span v-if="item.status">{{ item.activeName }}</span>
-          </p>
-        </li>
-      </ul>
-    </div>
+          {{ item.title }}
+          <span v-if="item.status">{{ item.activeName }}</span>
+        </p>
+      </li>
+    </ul>
 
-    <div class="text-center">
+    <div class="text-center mt-10">
       <router-view></router-view>
     </div>
   </div>
 </template>
-
-<style>
-
-</style>
 
 <script>
 import HeaderPattern from "./components/HeaderPattern.vue";
@@ -51,7 +45,7 @@ export default {
           title: "那餚",
           activeName: "・可口",
           status: true,
-          img: "./assets/source/location/food.png",
+          img: require("./assets/source/location/food@2x.png"),
         },
         {
           path: "/location",
@@ -59,7 +53,7 @@ export default {
           title: "那景",
           activeName: "・醉人",
           status: false,
-          img: "./assets/source/location/mountain.png",
+          img: require("./assets/source/location/mountain@2x.png"),
         },
         {
           path: "/hotel",
@@ -67,14 +61,13 @@ export default {
           title: "那房",
           activeName: "・舒適",
           status: false,
-          img: "./assets/source/location/bed.png",
+          img: require("./assets/source/location/bed@2x.png"),
         },
       ],
     };
   },
   methods: {
     tabChecked(id, path) {
-      console.log(id);
       this.tabList.find((item) => {
         item.status = id === item.name;
         this.$router.push(path);
@@ -83,3 +76,46 @@ export default {
   },
 };
 </script>
+
+<style>
+.tabBlock {
+  position: relative;
+}
+
+.tabBlock::before {
+  content: "";
+  width: 150px;
+  position: absolute;
+  left: 363px;
+  bottom: 1.5px;
+  border-bottom: 2px solid #4b5927;
+}
+
+.tabBlock::after {
+  content: "";
+  width: 150px;
+  position: absolute;
+  bottom: 1.5px;
+  right: 363px;
+  border-bottom: 2px solid #4b5927;
+}
+
+.tab {
+  width: 170px;
+  text-align: center;
+}
+
+.tab img {
+  display: inline;
+}
+
+.tab.active {
+  @apply border-b-0 border-2;
+  z-index: 10;
+  border-bottom: 2px solid #fff;
+}
+
+.tab.active img {
+  display: inline;
+}
+</style>
