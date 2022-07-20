@@ -3,7 +3,7 @@
   <div class="container mx-auto">
     <logo-info></logo-info>
 
-    <ul class="mt-20 flex justify-center items-center tabBlock">
+    <ul class="mt-20 flex justify-center items-center tabBlock mb-10">
       <li
         v-for="item in tabList"
         :key="item.name"
@@ -11,7 +11,7 @@
         :class="{ active: item.status }"
         @click="tabChecked(item.name, item.path)"
       >
-        <img class="w-20 h-20" :src="item.img" :alt="item.name" />
+        <img class="w-16 h-16" :src="item.img" :alt="item.name" />
         <p
           class="text-primaryDark text-lg text-center pt-3 font-SourceHanSerifTC"
         >
@@ -53,7 +53,7 @@ export default {
           title: "那景",
           activeName: "・醉人",
           status: false,
-          img: require("./assets/source/location/mountain@2x.png"),
+          img: require("./assets/source/location/mountain.png"),
         },
         {
           path: "/hotel",
@@ -61,7 +61,7 @@ export default {
           title: "那房",
           activeName: "・舒適",
           status: false,
-          img: require("./assets/source/location/bed@2x.png"),
+          img: require("./assets/source/location/bed.png"),
         },
       ],
     };
@@ -73,11 +73,23 @@ export default {
         this.$router.push(path);
       });
     },
+    btnClick(id) {
+      this.searchBtn.find((item) => {
+        if (id === item.name) {
+          this.$router.push("/search-result");
+        }
+      });
+    },
   },
 };
 </script>
 
 <style>
+.tab {
+  width: 170px;
+  text-align: center;
+}
+
 .tabBlock {
   position: relative;
 }
@@ -86,8 +98,8 @@ export default {
   content: "";
   width: 150px;
   position: absolute;
-  left: 363px;
   bottom: 1.5px;
+  left: 363px;
   border-bottom: 2px solid #4b5927;
 }
 
@@ -100,11 +112,6 @@ export default {
   border-bottom: 2px solid #4b5927;
 }
 
-.tab {
-  width: 170px;
-  text-align: center;
-}
-
 .tab img {
   display: inline;
 }
@@ -115,7 +122,7 @@ export default {
   border-bottom: 2px solid #fff;
 }
 
-.tab.active img {
+.tab.active > img {
   display: inline;
 }
 </style>

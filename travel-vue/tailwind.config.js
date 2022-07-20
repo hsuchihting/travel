@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./public/index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
@@ -14,9 +13,14 @@ module.exports = {
         bannerDesc: "#999999",
         text: "#768350",
         search: "#A8B67E26",
+        gray: "#666666",
       },
       fontFamily: {
-        "SourceHanSerifTC": "Source Han Serif TC",
+        SourceHanSerifTC: "Noto Sans TC",
+      },
+      width: {
+        "500px": "600px",
+        calendar: "264px",
       },
     },
   },
