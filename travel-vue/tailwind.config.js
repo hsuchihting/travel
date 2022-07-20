@@ -21,6 +21,10 @@ module.exports = {
       width: {
         "500px": "600px",
         calendar: "264px",
+        infoImgW: "450px",
+      },
+      height: {
+        infoImgH: "166px",
       },
     },
   },
