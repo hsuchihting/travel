@@ -25,16 +25,18 @@
       <router-view></router-view>
     </div>
   </div>
+  <footer-component></footer-component>
 </template>
 
 <script>
 import HeaderPattern from "./components/HeaderPattern.vue";
 import LogoInfo from "./components/LogoInfo.vue";
-
+import FooterComponent from "./components/FooterComponent.vue";
 export default {
   components: {
     HeaderPattern,
     LogoInfo,
+    FooterComponent,
   },
   data() {
     return {

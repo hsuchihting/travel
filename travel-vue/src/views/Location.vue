@@ -73,7 +73,7 @@
       田寮「月世界」特殊景觀在地理學稱為「惡地」，經年累月由雨、河水侵蝕，將泥沙堆積在泥岩上，泥沙與泥岩混合經由風化形成。
     </p>
     <ul class="flex items-center absolute -bottom-10 right-16">
-      <li class="mr-3 shadow-sm" v-for="item in infoImg" :key="item.name">
+      <li class="mr-3" v-for="item in infoImg" :key="item.name">
         <img
           class="w-infoImgW h-infoImgH rounded-infoImgRounded object-cover shadow-md shadow-gray-500"
           :src="item.img"
@@ -90,24 +90,17 @@
     </p>
     <div class="bg-search p-4 flex justify-between">
       <div class="flex items-center">
-        <p
-          class="text-footerBg font-bold px-4 py-2 bg-white flex items-center border border-borderColor"
-        >
-          精選推薦
-          <span class="flex-col pl-2">
-            <img src="../assets/source/location/arrow-up.png" alt="up" />
-            <img src="../assets/source/location/arrow-down.png" alt="down" />
-          </span>
-        </p>
-        <p
-          class="text-footerBg font-bold px-4 py-2 bg-white flex items-center border border-borderColor"
-        >
-          熱門瀏覽
-          <span class="flex-col pl-2">
-            <img src="../assets/source/location/arrow-up.png" alt="up" />
-            <img src="../assets/source/location/arrow-down.png" alt="down" />
-          </span>
-        </p>
+        <div v-for="item in listSelect" :key="item.text">
+          <p
+            class="text-footerBg font-bold px-4 py-2 bg-white flex items-center border border-borderColor"
+          >
+            {{ item.text }}
+            <span class="flex-col pl-2">
+              <img :src="item.up" :alt="item.name" />
+              <img :src="item.down" :alt="item.down" />
+            </span>
+          </p>
+        </div>
       </div>
 
       <div class="flex items-center">
@@ -155,6 +148,15 @@
 
   <!-- pagination -->
   <ul class="flex justify-center items-center">
+    <img
+      src="../assets/source/location/arrow-left-muti.svg"
+      alt="arrow-left-muti"
+    />
+    <img
+      class="transform rotate-180 px-4"
+      src="../assets/source/home/angle-right.png"
+      alt="arrow-right"
+    />
     <li
       class="flex items-center px-5"
       v-for="(item, index) in pagination"
@@ -163,6 +165,15 @@
     >
       <p>{{ item.page }}</p>
     </li>
+    <img
+      class="px-4"
+      src="../assets/source/home/angle-right.png"
+      alt="arrow-right"
+    />
+    <img
+      src="../assets/source/location/arrow-right-muti.svg"
+      alt="arrow-right"
+    />
   </ul>
 
   <!-- hot location -->
@@ -215,6 +226,20 @@ export default {
         {
           name: "sakura02",
           img: require("../assets/images/sakura_02.jpg"),
+        },
+      ],
+      listSelect: [
+        {
+          text: "精選推薦",
+          name: "up",
+          up: require("../assets/source/location/arrow-up.png"),
+          down: require("../assets/source/location/arrow-down.png"),
+        },
+        {
+          text: "熱門瀏覽",
+          name: "down",
+          up: require("../assets/source/location/arrow-up.png"),
+          down: require("../assets/source/location/arrow-down.png"),
         },
       ],
       locations: [
