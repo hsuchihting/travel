@@ -20,7 +20,7 @@ module.exports = {
         SourceHanSerifTC: "Noto Sans TC",
       },
       width: {
-        "500px": "600px",
+        locationInputW: "600px",
         calendar: "264px",
         infoImgW: "594px",
         locationW: "31.33333%",

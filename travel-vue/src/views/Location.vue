@@ -147,10 +147,10 @@
   </div>
 
   <!-- pagination -->
-  <ul class="flex justify-center items-center">
+  <ul class="flex justify-center items-center my-20">
     <img
       src="../assets/source/location/arrow-left-muti.svg"
-      alt="arrow-left-muti"
+      alt="arrow-left-multi"
     />
     <img
       class="transform rotate-180 px-4"
@@ -172,14 +172,14 @@
     />
     <img
       src="../assets/source/location/arrow-right-muti.svg"
-      alt="arrow-right"
+      alt="arrow-right-multi"
     />
   </ul>
 
   <!-- hot location -->
-  <div class="relative">
+  <div class="relative mt-28 ">
     <div
-      class="w-hotLocationBgW h-hotLocationBgH bg-primaryLight p-4 mt-28 mx-auto"
+      class="w-hotLocationBgW h-hotLocationBgH bg-primaryLight p-4 mx-auto"
     >
       <p class="text-lg font-bold p-2 text-left">熱門景點</p>
       <ul class="w-full flex items-center absolute top-16 left-0">
@@ -541,10 +541,6 @@ export default {
 .locationList {
   width: 31.3333%;
   margin: 0 2% 3% 1%;
-}
-
-.locationList:last-child {
-  margin-right: 0;
 }
 
 .locationList:nth-child(3n + 1) {

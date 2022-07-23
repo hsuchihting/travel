@@ -5,7 +5,7 @@ import Food from "../views/Food.vue";
 import SearchResult from "../views/SearchResult.vue";
 
 const routes = [
-  { path: "/", component: Location },
+  { path: "/", component: Food },
   {
     path: "/location",
     name: "Location",

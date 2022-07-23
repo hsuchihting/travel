@@ -30,7 +30,7 @@
     <ul class="flex items-center absolute -bottom-10 right-16">
       <li class="mr-3 shadow-sm" v-for="item in infoImg" :key="item.name">
         <img
-          class="w-infoImgW h-infoImgH rounded-infoImgRounded shadow-md shadow-gray-500 food"
+          class="w-infoImgW h-infoImgH rounded-infoImgRounded shadow-md shadow-gray-500 object-cover"
           :src="item.img"
           :alt="item.name"
         />
@@ -63,8 +63,5 @@ export default {
 </script>
 
 <style>
-.food {
-  object-fit: none;
-  object-position: 70% 0% 10% 0%;
-}
+
 </style>
