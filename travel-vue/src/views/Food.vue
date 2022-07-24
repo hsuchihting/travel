@@ -1,4 +1,10 @@
 <template>
+  <!-- swiper -->
+  <Swiper :pagination="true" :modules="modules" class="mySwiper">
+    <SwiperSlide v-for="(item, index) in banner" :key="index">
+      <img :src="item.img" :alt="index" />
+    </SwiperSlide>
+  </Swiper>
   <!-- tag -->
   <div
     class="w-full mt-10 border-dotted border-t-2 border-b-2 border-primary py-3"
@@ -38,14 +44,46 @@
     </ul>
   </div>
 
-  <div class="w-[200px] bg-[#0f0] py-4 mt-10">123</div>
+  <div class="w-[200px] bg-[#fff] py-4 mt-10">123</div>
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "./style.css";
+import { Pagination } from "swiper";
+
 export default {
   name: "Food",
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   data() {
     return {
+      modules: [Pagination],
+      banner: [
+        {
+          img: require("../assets/images/food_banner_01.jpg"),
+        },
+        {
+          img: require("../assets/images/food_buy_04.jpg"),
+        },
+        {
+          img: require("../assets/images/food_category_04.jpg"),
+        },
+        {
+          img: require("../assets/images/food_category_05.jpg"),
+        },
+        {
+          img: require("../assets/images/food_hot_02.jpg"),
+        },
+        // {
+        //   img: require("../assets/images/food_need_02.jpg"),
+        // },
+      ],
       tagList: ["必吃", "網美餐廳", "名產", "賞花", "祭典與節慶", "道地美食"],
       infoImg: [
         {
@@ -62,6 +100,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
