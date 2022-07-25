@@ -1,9 +1,17 @@
 <template>
   <!-- swiper -->
-  <Swiper :pagination="true" :modules="modules" class="mySwiper">
+  <Swiper
+    :slides-per-view="1"
+    :space-between="50"
+    :modules="modules"
+    :pagination="{ clickable: true }"
+    :autoplay="autoplayOptions"
+  >
     <SwiperSlide v-for="(item, index) in banner" :key="index">
-      <img :src="item.img" :alt="index" />
+      <img :src="item.img" alt="" />
     </SwiperSlide>
+
+       <div class="swiper-pagination"></div>
   </Swiper>
   <!-- tag -->
   <div
@@ -48,12 +56,10 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from "swiper/vue";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "./style.css";
-import { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue/swiper-vue";
+import { Pagination, Autoplay } from "swiper";
+import "swiper/swiper.min.css";
+import "swiper/swiper-bundle.min.js";
 
 export default {
   name: "Food",
@@ -63,7 +69,11 @@ export default {
   },
   data() {
     return {
-      modules: [Pagination],
+      modules: [Pagination, Autoplay],
+      autoplayOptions: {
+        delay: 3000,
+        loop: true,
+      },
       banner: [
         {
           img: require("../assets/images/food_banner_01.jpg"),
@@ -100,4 +110,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.swiper {
+  width: 100%;
+  height: 425px;
+}
+.swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+</style>
