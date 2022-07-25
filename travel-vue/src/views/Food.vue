@@ -8,10 +8,10 @@
     :autoplay="autoplayOptions"
   >
     <SwiperSlide v-for="(item, index) in banner" :key="index">
-      <img :src="item.img" alt="" />
+      <img :src="item.img" :alt="index" />
     </SwiperSlide>
 
-       <div class="swiper-pagination"></div>
+    <div class="swiper-pagination"></div>
   </Swiper>
   <!-- tag -->
   <div
@@ -59,7 +59,6 @@
 import { Swiper, SwiperSlide } from "swiper/vue/swiper-vue";
 import { Pagination, Autoplay } from "swiper";
 import "swiper/swiper.min.css";
-import "swiper/swiper-bundle.min.js";
 
 export default {
   name: "Food",
@@ -71,7 +70,7 @@ export default {
     return {
       modules: [Pagination, Autoplay],
       autoplayOptions: {
-        delay: 3000,
+        delay: 2000,
         loop: true,
       },
       banner: [
