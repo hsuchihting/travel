@@ -57,42 +57,20 @@
   <div class="w-full mt-32">
     <div class="flex items-center">
       <ul class="w-1/2 flex items-center mr-2">
-        <li class="w-1/3 h-96 mr-2 overflow-hidden cursor-pointer relative">
+        <li
+          class="w-1/3 h-96 mr-2 overflow-hidden cursor-pointer relative foodList"
+          v-for="(item, index) in foodIntroductionList"
+          :key="index"
+        >
           <img
             class="w-full h-full object-cover"
-            src="../assets/images/food_category_01.jpg"
-            alt=""
+            :src="item.img"
+            :alt="item.name"
           />
           <p
             class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
           >
-            泰 式
-          </p>
-        </li>
-        <li class="w-1/3 h-96 mr-2 overflow-hidden cursor-pointer relative">
-          <img
-            class="w-full h-full object-cover"
-            src="../assets/images/food_category_02.jpg"
-            alt=""
-          />
-
-          <p
-            class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
-          >
-            日 式
-          </p>
-        </li>
-        <li class="w-1/3 h-96 overflow-hidden cursor-pointer relative">
-          <img
-            class="w-full h-full object-cover"
-            src="../assets/images/food_category_03.jpg"
-            alt=""
-          />
-
-          <p
-            class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
-          >
-            港 式
+            {{ item.name }}
           </p>
         </li>
       </ul>
@@ -114,51 +92,27 @@
         />
       </div>
       <ul class="w-1/2 flex items-center">
-        <li class="w-1/3 h-96 mr-2 overflow-hidden cursor-pointer relative">
+        <li
+          class="w-1/3 h-96 mr-2 overflow-hidden cursor-pointer relative dessertList"
+          v-for="(item, index) in desertList"
+          :key="index"
+        >
           <img
             class="w-full h-full object-cover"
-            src="../assets/images/food_category_06.jpg"
-            alt=""
+            :src="item.img"
+            :alt="index"
           />
           <p
             class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
           >
-            咖 啡
-          </p>
-        </li>
-        <li class="w-1/3 h-96 mr-2 overflow-hidden cursor-pointer relative">
-          <img
-            class="w-full h-full object-cover"
-            src="../assets/images/food_category_08.jpg"
-            alt=""
-          />
-
-          <p
-            class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
-          >
-            鹹 點
-          </p>
-        </li>
-        <li class="w-1/3 h-96 overflow-hidden cursor-pointer relative">
-          <img
-            class="w-full h-full object-cover"
-            src="../assets/images/food_category_09.jpg"
-            alt=""
-          />
-
-          <p
-            class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
-          >
-            甜 點
+            {{ item.name }}
           </p>
         </li>
       </ul>
     </div>
   </div>
 
-
   <!-- food introduction -->
-  
 </template>
 
 <script>
@@ -195,9 +149,6 @@ export default {
         {
           img: require("../assets/images/food_hot_02.jpg"),
         },
-        // {
-        //   img: require("../assets/images/food_need_02.jpg"),
-        // },
       ],
       tagList: ["必吃", "網美餐廳", "名產", "賞花", "祭典與節慶", "道地美食"],
       infoImg: [
@@ -208,6 +159,34 @@ export default {
         {
           name: "food02",
           img: require("../assets/images/food_need_02.png"),
+        },
+      ],
+      foodIntroductionList: [
+        {
+          name: "泰 式",
+          img: require("../assets/images/food_category_01.jpg"),
+        },
+        {
+          name: "日 式",
+          img: require("../assets/images/food_category_02.jpg"),
+        },
+        {
+          name: "港 式",
+          img: require("../assets/images/food_category_03.jpg"),
+        },
+      ],
+      desertList: [
+        {
+          name: "咖 啡",
+          img: require("../assets/images/food_category_05.jpg"),
+        },
+        {
+          name: "鹹 點",
+          img: require("../assets/images/food_category_06.jpg"),
+        },
+        {
+          name: "甜 點",
+          img: require("../assets/images/food_category_08.jpg"),
         },
       ],
     };
@@ -226,7 +205,11 @@ export default {
   height: 100%;
 }
 
-.menu-name {
-  z-index: 10;
+.foodList:last-child {
+  margin-right: 0;
+}
+
+.dessertList:last-child {
+  margin-right: 0;
 }
 </style>
