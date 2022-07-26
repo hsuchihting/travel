@@ -6,6 +6,7 @@
     :modules="modules"
     :pagination="{ clickable: true }"
     :autoplay="autoplayOptions"
+    effect="fade"
   >
     <SwiperSlide v-for="(item, index) in banner" :key="index">
       <img :src="item.img" :alt="index" />
@@ -52,12 +53,117 @@
     </ul>
   </div>
 
-  <div class="w-[200px] bg-[#fff] py-4 mt-10">123</div>
+  <!-- category -->
+  <div class="w-full mt-32">
+    <div class="flex items-center">
+      <ul class="w-1/2 flex items-center mr-2">
+        <li class="w-1/3 h-96 mr-2 overflow-hidden cursor-pointer relative">
+          <img
+            class="w-full h-full object-cover"
+            src="../assets/images/food_category_01.jpg"
+            alt=""
+          />
+          <p
+            class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
+          >
+            泰 式
+          </p>
+        </li>
+        <li class="w-1/3 h-96 mr-2 overflow-hidden cursor-pointer relative">
+          <img
+            class="w-full h-full object-cover"
+            src="../assets/images/food_category_02.jpg"
+            alt=""
+          />
+
+          <p
+            class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
+          >
+            日 式
+          </p>
+        </li>
+        <li class="w-1/3 h-96 overflow-hidden cursor-pointer relative">
+          <img
+            class="w-full h-full object-cover"
+            src="../assets/images/food_category_03.jpg"
+            alt=""
+          />
+
+          <p
+            class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
+          >
+            港 式
+          </p>
+        </li>
+      </ul>
+      <div class="w-1/2 h-96">
+        <img
+          class="w-full h-full object-cover"
+          src="../assets/images/food_category_04.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="flex items-center mt-5">
+      <div class="w-1/2 h-96 mr-2">
+        <img
+          class="w-full h-full object-cover"
+          src="../assets/images/food_category_05.jpg"
+          alt=""
+        />
+      </div>
+      <ul class="w-1/2 flex items-center">
+        <li class="w-1/3 h-96 mr-2 overflow-hidden cursor-pointer relative">
+          <img
+            class="w-full h-full object-cover"
+            src="../assets/images/food_category_06.jpg"
+            alt=""
+          />
+          <p
+            class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
+          >
+            咖 啡
+          </p>
+        </li>
+        <li class="w-1/3 h-96 mr-2 overflow-hidden cursor-pointer relative">
+          <img
+            class="w-full h-full object-cover"
+            src="../assets/images/food_category_08.jpg"
+            alt=""
+          />
+
+          <p
+            class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
+          >
+            鹹 點
+          </p>
+        </li>
+        <li class="w-1/3 h-96 overflow-hidden cursor-pointer relative">
+          <img
+            class="w-full h-full object-cover"
+            src="../assets/images/food_category_09.jpg"
+            alt=""
+          />
+
+          <p
+            class="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black to-transparent hover:text-white hover:text-2xl opacity-0 hover:opacity-100 duration-300 pb-5"
+          >
+            甜 點
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- food introduction -->
+  
 </template>
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue/swiper-vue";
-import { Pagination, Autoplay } from "swiper";
+import { Pagination, Autoplay, EffectFade } from "swiper";
 import "swiper/swiper.min.css";
 
 export default {
@@ -68,7 +174,7 @@ export default {
   },
   data() {
     return {
-      modules: [Pagination, Autoplay],
+      modules: [Pagination, Autoplay, EffectFade],
       autoplayOptions: {
         delay: 2000,
         loop: true,
@@ -118,5 +224,9 @@ export default {
   width: 100%;
   object-fit: cover;
   height: 100%;
+}
+
+.menu-name {
+  z-index: 10;
 }
 </style>
