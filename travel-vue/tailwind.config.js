@@ -26,6 +26,9 @@ module.exports = {
         locationW: "31.33333%",
         hotLocationImgW: "25%",
         hotLocationBgW: "95%",
+        hotelWidth: "800px",
+        travelWidth: "1200px",
+        hotelInputWidth:'90%'
       },
       height: {
         infoImgH: "166px",

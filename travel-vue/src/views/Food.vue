@@ -113,6 +113,65 @@
   </div>
 
   <!-- food introduction -->
+  <div class="w-3/4 h-96 mt-40 relative">
+    <img
+      class="w-full h-full object-cover"
+      src="../assets/images/food_hot_01_transform.jpg"
+      alt=""
+    />
+    <div
+      class="absolute -right-72 bottom-10 shadow-md shadow-black w-96 p-6 text-left bg-white bg-opacity-70"
+    >
+      <p class="text-primaryDark pb-10">正宗義大利 真材實料</p>
+
+      <p class="text-4xl text-primaryDark pb-4">23 號街角</p>
+      <p class="text-primaryDark">好友相聚聚餐必選之地</p>
+    </div>
+  </div>
+
+  <div class="w-3/4 h-96 ml-auto mt-10 relative">
+    <div
+      class="absolute -left-72 bottom-10 shadow-md shadow-black w-96 p-6 text-left bg-white bg-opacity-70"
+    >
+      <p class="text-primaryDark pb-10">資深老饕 今日推薦</p>
+
+      <p class="text-4xl text-primaryDark pb-4">又見ㄧ炊煙</p>
+      <p class="text-primaryDark">食物好吃，風景美麗！ 高CP值的無菜單料理</p>
+    </div>
+    <img
+      class="w-full h-full object-cover"
+      src="../assets/images/food_hot_02.jpg"
+      alt=""
+    />
+  </div>
+
+  <!-- buy -->
+
+  <div class="mt-40">
+    <h3 class="text-4xl py-8 text-primaryDark font-bold">
+      買東西、吃東西、買東西、吃東西
+    </h3>
+    <p class="text-lg text-primaryDark mb-8">伴手禮、小吃不錯過</p>
+
+    <ul class="flex items-center">
+      <li
+        class="mx-2 w-1/4 h-80 overflow-hidden cursor-pointer relative"
+        v-for="(item, index) in buyList"
+        :key="index"
+      >
+        <img
+          class="w-full h-full object-cover"
+          :src="item.img"
+          :alt="item.key"
+        />
+        <p
+          class="absolute inset-x-0 bottom-0 flex justify-center items-end opacity-0 hover:opacity-100 hover:text-white hover:bg-black bg-opacity-0 hover:bg-opacity-50 py-4 duration-300"
+        >
+          {{ item.name }}
+        </p>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -187,6 +246,28 @@ export default {
         {
           name: "甜 點",
           img: require("../assets/images/food_category_08.jpg"),
+        },
+      ],
+      buyList: [
+        {
+          name: "走跳夜市",
+          key: "nightMarket",
+          img: require("../assets/images/home_travel_hot_01.jpg"),
+        },
+        {
+          name: "伴手禮推薦",
+          key: "gift",
+          img: require("../assets/images/food_buy_02.jpg"),
+        },
+        {
+          name: "購物商圈",
+          key: "shopping",
+          img: require("../assets/images/food_buy_03.jpg"),
+        },
+        {
+          name: "知名小吃店",
+          key: "restaurant",
+          img: require("../assets/images/food_buy_04.jpg"),
         },
       ],
     };
