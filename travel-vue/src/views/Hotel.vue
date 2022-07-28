@@ -179,7 +179,7 @@
   </div>
 
   <!-- secret discount -->
-  <div class="w-full bg-search py-10">
+  <div class="w-full bg-search py-10 my-36">
     <div class="w-travelWidth mx-auto">
       <h3 class="text-3xl text-primaryDark text-left font-bold py-4">
         訂閱以查看秘密優惠
